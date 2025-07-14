@@ -1,4 +1,4 @@
-$.fn.DeeboProgressIsInViewport = function (content) {
+$.fn.kaveeProgressIsInViewport = function (content) {
   "use strict";
   return $(this).offset().top - content.outerHeight();
 };
@@ -6,27 +6,27 @@ $.fn.DeeboProgressIsInViewport = function (content) {
 (function ($) {
   "use strict";
 
-  var FrenifyDeebo = {
+  var Frenifykavee = {
     init: function () {
-      FrenifyDeebo.BgImg();
-      FrenifyDeebo.imgToSVG();
-      FrenifyDeebo.progress();
-      FrenifyDeebo.resume();
-      FrenifyDeebo.loadBlogPosts();
-      FrenifyDeebo.modal();
-      FrenifyDeebo.progress2();
-      FrenifyDeebo.contactForm();
-      FrenifyDeebo.toTopJumper();
-      FrenifyDeebo.rating();
-      FrenifyDeebo.isotope();
-      FrenifyDeebo.portfolioFilter();
-      FrenifyDeebo.magnific();
-      FrenifyDeebo.anchor();
-      FrenifyDeebo.darklight();
+      Frenifykavee.BgImg();
+      Frenifykavee.imgToSVG();
+      Frenifykavee.progress();
+      Frenifykavee.resume();
+      Frenifykavee.loadBlogPosts();
+      Frenifykavee.modal();
+      Frenifykavee.progress2();
+      Frenifykavee.contactForm();
+      Frenifykavee.toTopJumper();
+      Frenifykavee.rating();
+      Frenifykavee.isotope();
+      Frenifykavee.portfolioFilter();
+      Frenifykavee.magnific();
+      Frenifykavee.anchor();
+      Frenifykavee.darklight();
     },
 
     darklight: function () {
-      $(".deebo_fn_switcher_wrap input").on("change", function () {
+      $(".kavee_fn_switcher_wrap input").on("change", function () {
         var checkBox = $(this);
         if (checkBox.is(":checked")) {
           setTimeout(function () {
@@ -139,7 +139,7 @@ $.fn.DeeboProgressIsInViewport = function (content) {
     },
 
     toTopJumper: function () {
-      var totop = $(".deebo_fn_totop");
+      var totop = $(".kavee_fn_totop");
       if (totop.length) {
         totop.on("click", function (e) {
           e.preventDefault();
@@ -150,7 +150,7 @@ $.fn.DeeboProgressIsInViewport = function (content) {
     },
 
     fixedTotopScroll: function () {
-      var totop = $(".deebo_fn_totop");
+      var totop = $(".kavee_fn_totop");
       var height = 100;
       if (totop.length) {
         if ($(".cv__content").scrollTop() > height) {
@@ -216,7 +216,7 @@ $.fn.DeeboProgressIsInViewport = function (content) {
         var pWrap = $(this);
         pWrap.waypoint({
           handler: function () {
-            FrenifyDeebo.progress2F(pWrap);
+            Frenifykavee.progress2F(pWrap);
           },
           offset: "90%",
         });
@@ -238,7 +238,7 @@ $.fn.DeeboProgressIsInViewport = function (content) {
     },
     modal: function () {
       var self = this;
-      var modalBox = $(".deebo_fn_modalbox");
+      var modalBox = $(".kavee_fn_modalbox");
       var item = $(".modal_item");
       var closePopup = modalBox.find(".closer,.extra_closer");
       var prevNext = modalBox.find(".fn__nav");
@@ -314,7 +314,7 @@ $.fn.DeeboProgressIsInViewport = function (content) {
             });
           }, 500);
 
-          $(".deebo_fn_modalbox .modal_content")
+          $(".kavee_fn_modalbox .modal_content")
             .stop()
             .animate({ scrollTop: 0 }, 500, "swing");
 
@@ -383,22 +383,22 @@ $.fn.DeeboProgressIsInViewport = function (content) {
     },
 
     resume: function () {
-      $(".deebo_fn__cv .cv__content").scrollTop(0);
+      $(".kavee_fn__cv .cv__content").scrollTop(0);
       $("body").addClass("resume-opened");
     },
 
     progress: function () {
-      var content = $(".deebo_fn__cv .cv__content");
+      var content = $(".kavee_fn__cv .cv__content");
       if ($(window).width() <= 768) {
-        content = $(".deebo_fn__cv");
+        content = $(".kavee_fn__cv");
       }
       content.on("resize scroll", function () {
         if (
-          $(".deebo_fn__cv .fn_cs_progress_bar").DeeboProgressIsInViewport(
+          $(".kavee_fn__cv .fn_cs_progress_bar").kaveeProgressIsInViewport(
             content
           ) < 0
         ) {
-          FrenifyDeebo.progressF($(".deebo_fn__cv .fn_cs_progress_bar"));
+          Frenifykavee.progressF($(".kavee_fn__cv .fn_cs_progress_bar"));
         }
       });
     },
@@ -459,14 +459,14 @@ $.fn.DeeboProgressIsInViewport = function (content) {
 
   // READY Functions
   $(document).ready(function () {
-    FrenifyDeebo.init();
+    Frenifykavee.init();
   });
 
   // RESIZE Functions
   $(window).on("resize", function () {
-    FrenifyDeebo.isotope();
+    Frenifykavee.isotope();
     setTimeout(function () {
-      FrenifyDeebo.isotope();
+      Frenifykavee.isotope();
     }, 1010);
   });
 
@@ -477,6 +477,6 @@ $.fn.DeeboProgressIsInViewport = function (content) {
 
   // SCROLL Functions
   $(".cv__content").on("scroll", function () {
-    FrenifyDeebo.fixedTotopScroll();
+    Frenifykavee.fixedTotopScroll();
   });
 })(jQuery);
